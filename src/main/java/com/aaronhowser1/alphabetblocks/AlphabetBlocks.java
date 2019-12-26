@@ -1,6 +1,5 @@
 package com.aaronhowser1.alphabetblocks;
 
-import com.aaronhowser1.alphabetblocks.blocks.ModBlocks;
 import com.aaronhowser1.alphabetblocks.setup.ModSetup;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
