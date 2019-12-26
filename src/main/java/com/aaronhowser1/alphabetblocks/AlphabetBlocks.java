@@ -1,10 +1,7 @@
 package com.aaronhowser1.alphabetblocks;
 
 import com.aaronhowser1.alphabetblocks.blocks.ModBlocks;
-import com.aaronhowser1.alphabetblocks.setup.ClientProxy;
-import com.aaronhowser1.alphabetblocks.setup.IProxy;
 import com.aaronhowser1.alphabetblocks.setup.ModSetup;
-import com.aaronhowser1.alphabetblocks.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -25,8 +22,6 @@ import org.apache.logging.log4j.Logger;
 public class AlphabetBlocks {
 
     private static final Logger LOGGER = LogManager.getLogger();
-
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     public AlphabetBlocks() {
         // Register the setup method for modloading
