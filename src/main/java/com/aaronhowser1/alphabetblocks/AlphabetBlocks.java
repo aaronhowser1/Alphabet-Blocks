@@ -14,9 +14,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collections;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("alphabetblocks")
@@ -30,6 +35,19 @@ public class AlphabetBlocks {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+//      Very important config
+        Path p = FMLPaths.CONFIGDIR.get().resolve("alphabetblocks.toml");
+        if (!Files.exists(p))
+        {
+            try
+            {
+                Files.write(p, Collections.singletonList("I've lied to you, there is no config"));
+            }
+            catch (Exception ignored)
+            {
+            }
+        }
     }
 
     private void setup(final FMLCommonSetupEvent event) {
