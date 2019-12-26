@@ -4,6 +4,6 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModBlocks {
 
-    @ObjectHolder("alphabetblocks:a")
+    @ObjectHolder("alphabetblocks:big_a")
     public static BlockBigA BLOCKBIGA;
 }
