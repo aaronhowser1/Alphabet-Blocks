@@ -7,12 +7,14 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,33 +41,11 @@ public class AlphabetBlocks {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_a"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_b"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_c"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_d"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_e"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_f"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_g"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_h"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_i"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_j"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_k"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_l"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_m"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_n"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_o"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_p"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_q"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_r"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_s"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_t"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_u"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_v"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_w"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_x"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_y"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_z"));
-//            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("small_a"));
+//          Thank you Lat for giving me this code after seeing me flail hopelessly
+            Block.Properties properties = Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement();
+            for(char c = 'a'; c <= 'z'; c++) {
+                event.getRegistry().register(new Block(properties).setRegistryName("big_" + c));
+            }
 //            TODO: Make lowercase letters
 //            TODO: Make punctuation blocks
 //            TODO: Make different versions: black on white, white on black, wooden toy, etc
@@ -76,32 +56,10 @@ public class AlphabetBlocks {
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             Item.Properties properties = new Item.Properties()
                     .group(ModSetup.itemGroup);
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGA, properties).setRegistryName("big_a"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGB, properties).setRegistryName("big_b"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGC, properties).setRegistryName("big_c"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGD, properties).setRegistryName("big_d"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGE, properties).setRegistryName("big_e"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGF, properties).setRegistryName("big_f"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGG, properties).setRegistryName("big_g"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGH, properties).setRegistryName("big_h"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGI, properties).setRegistryName("big_i"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGJ, properties).setRegistryName("big_j"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGK, properties).setRegistryName("big_k"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGL, properties).setRegistryName("big_l"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGM, properties).setRegistryName("big_m"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGN, properties).setRegistryName("big_n"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGO, properties).setRegistryName("big_o"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGP, properties).setRegistryName("big_p"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGQ, properties).setRegistryName("big_q"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGR, properties).setRegistryName("big_r"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGS, properties).setRegistryName("big_s"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGT, properties).setRegistryName("big_t"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGU, properties).setRegistryName("big_u"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGV, properties).setRegistryName("big_v"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGW, properties).setRegistryName("big_w"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGX, properties).setRegistryName("big_x"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGY, properties).setRegistryName("big_y"));
-            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGZ, properties).setRegistryName("big_z"));
+//            Also this code
+            for(char c = 'a'; c <= 'z'; c++) {
+                event.getRegistry().register(new BlockItem(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("alphabetblocks", "big_" + c)), properties).setRegistryName("big_" + c));
+            }
         }
     }
 }
