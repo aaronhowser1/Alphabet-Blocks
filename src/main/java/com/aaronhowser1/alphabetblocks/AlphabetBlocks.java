@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -70,6 +69,7 @@ public class AlphabetBlocks {
 //            TODO: Make lowercase letters
 //            TODO: Make punctuation blocks
 //            TODO: Make different versions: black on white, white on black, wooden toy, etc
+//            TODO: Add memes
         }
 
         @SubscribeEvent
