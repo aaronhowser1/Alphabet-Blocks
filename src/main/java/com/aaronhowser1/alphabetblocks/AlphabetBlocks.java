@@ -71,7 +71,7 @@ public class AlphabetBlocks {
             event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_x"));
             event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_y"));
             event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_z"));
-            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("small_a"));
+//            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("small_a"));
 //            TODO: Make lowercase letters
 //            TODO: Make punctuation blocks
 //            TODO: Make different versions: black on white, white on black, wooden toy, etc
