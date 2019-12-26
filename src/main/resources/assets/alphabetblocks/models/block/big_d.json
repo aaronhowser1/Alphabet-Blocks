@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "alphabetblocks:block/small_a"
+    "all": "alphabetblocks:block/big_d"
   }
 }
