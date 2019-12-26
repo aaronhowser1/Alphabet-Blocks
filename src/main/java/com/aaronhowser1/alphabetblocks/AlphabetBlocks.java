@@ -10,8 +10,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -77,7 +75,6 @@ public class AlphabetBlocks {
 //            TODO: Make lowercase letters
 //            TODO: Make punctuation blocks
 //            TODO: Make different versions: black on white, white on black, wooden toy, etc
-
         }
 
         @SubscribeEvent
