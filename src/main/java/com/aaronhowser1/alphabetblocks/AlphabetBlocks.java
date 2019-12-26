@@ -1,11 +1,14 @@
 package com.aaronhowser1.alphabetblocks;
 
+import com.aaronhowser1.alphabetblocks.blocks.BlockSmallA;
 import com.aaronhowser1.alphabetblocks.blocks.ModBlocks;
 import com.aaronhowser1.alphabetblocks.blocks.BlockBigA;
 import com.aaronhowser1.alphabetblocks.setup.ClientProxy;
 import com.aaronhowser1.alphabetblocks.setup.IProxy;
 import com.aaronhowser1.alphabetblocks.setup.ServerProxy;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,11 +47,15 @@ public class AlphabetBlocks {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new BlockBigA());
+            event.getRegistry().register(new BlockSmallA());
+            event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).doesNotBlockMovement()).setRegistryName("big_b"));
         }
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGA, new Item.Properties()).setRegistryName("big_a"));
+            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKSMALLA, new Item.Properties()).setRegistryName("small_a"));
+            event.getRegistry().register(new BlockItem(ModBlocks.BLOCKBIGB, new Item.Properties()).setRegistryName("big_b"));
         }
     }
 }
